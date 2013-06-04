@@ -1,46 +1,33 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: britram at github
+tagline: network measurement geek
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+### Greetings
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+I'm Brian Trammell, network measurement geek.
 
-## Update Author Attributes
+### Contents
 
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+Here you'll find three independent implementations of the [IPFIX flow export protocol][ipfix-protocol]: 
 
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
+- [ripfix][ripfix] which bridges IPFIX Data Records to Ruby hashes, and is intended for rapid prototyping of new IPFIX applications. It's dreadfully slow.
+- [python-ipfix][python-ipfix] which provides essentially the same interface as ripfix for python, but is (1) under heavy construction (i.e., it doesn't really work yet) and (2) designed such that it could be used for real analysis applications at some point in the future. The intention is to submit this to PyPI when it's ready.
+- [libfc][libfc] which provides a template-transcoding interface between IPFIX Data Records and C data structures in C++ (i.e., like [libfixbuf][libfixbuf]); there's also a placement-based interface (written by @sten69). The focus here is on performance. Don't ask me where the name came from.
 
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
+All three of these are essentially the first real project I did in each respective language, which may explain why they don't read especially idiomatically.
 
-    $ rm -rf _posts/core-samples
+You'll also find the [QoF][qof] flow meter, a fork of [YAF][yaf]. This is where I'm doing my current research on large-scale TCP performance measurement.
 
-Here's a sample "posts list".
+[ipfix-protocol]: http://tools.ietf.org/html/draft-ietf-ipfix-protocol-rfc5101bis
+[ripfix]: https://github.com/britram/ripfix
+[python-ipfix]: https://github.com/britram/python-ipfix
+[libfc]:  https://github.com/britram/libfc
+[qof]:  https://github.com/britram/qof
 
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
-
-## To-Do
-
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
+[yaf]:  http://tools.netsa.cert.org/yaf
+[libfixbuf]:  http://tools.netsa.cert.org/fixbuf
 
 
