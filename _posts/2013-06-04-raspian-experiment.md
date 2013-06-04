@@ -1,8 +1,8 @@
 ---
 layout: post
-category : lessons
-tagline: "Supporting tagline"
-tags : [qof, rpi]
+category : qof
+tagline: "slow things come in small packages"
+tags : [hack, raspberry-pi]
 ---
 {% include JB/setup %}
 
